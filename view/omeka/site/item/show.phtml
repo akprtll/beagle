@@ -19,6 +19,8 @@ $leftSidebarBlockContent = $this->resourcePageBlocks($item, 'left');
 $leftSidebarHasBlocks = $leftSidebarBlockContent->hasBlocks();
 $rightSidebarBlockContent = $this->resourcePageBlocks($item, 'right');
 $rightSidebarHasBlocks = $rightSidebarBlockContent->hasBlocks();
+$bottomMainBlockContent = $this->resourcePageBlocks($item, '***BOTTOM***');
+$bottomMainHasBlocks = $fullWidthMainBlockContent->hasBlocks();
 
 $tabManager = $this->TabManager();
 $tabNavigationRegion = $tabManager->getTabNavigationRegion($item);
