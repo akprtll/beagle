@@ -98,9 +98,9 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
         <?php endif; ?>
     </div>
     <?php endif; ?>
-    <?php if ($fullWidthBottomHasBlocks): ?>
+    <?php if ($bottomMainHasBlocks): ?>
     <div class="full-width-main">
-        <?php $fullWidthBlockArray = $fullWidthBottomBlockContent->getBlocksArray(); ?>
+        <?php $fullWidthBlockArray = $bottomMainBlockContent->getBlocksArray(); ?>
         <?php if ($tabNavigationRegion == 'full_width_bottom'): ?>
             <?php echo $tabManager->renderTabsOnly($resource, $tabContent); ?>
         <?php endif; ?>
@@ -108,7 +108,7 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
         <?php if ($tabContent == 'full_width_bottom'): ?>
             <?php echo $tabManager->renderPanels($resource, $tabContent, $tabLayout); ?>
         <?php else: ?>
-            <?php echo $fullWidthBottomBlockContent->getBlocks(); ?>
+            <?php echo $bottomMainBlockContent->getBlocks(); ?>
         <?php endif; ?>
     </div>
     <?php endif; ?>
