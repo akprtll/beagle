@@ -98,19 +98,22 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
         <?php endif; ?>
     </div>
     <?php endif; ?>
-    <?php if ($bottomMainHasBlocks): ?>
+<?php
+$template = $item->resourceTemplate();
+if ($template && $template->id() === 9 && $bottomMainHasBlocks):
+?>
     <div class="full-width-main">
         <?php $fullWidthBlockArray = $bottomMainBlockContent->getBlocksArray(); ?>
+
         <?php if ($tabNavigationRegion == 'full_width_bottom'): ?>
-            <?php echo $tabManager->renderTabsOnly($resource, $tabContent); ?>
+            <?= $tabManager->renderTabsOnly($resource, $tabContent); ?>
         <?php endif; ?>
 
         <?php if ($tabContent == 'full_width_bottom'): ?>
-            <?php echo $tabManager->renderPanels($resource, $tabContent, $tabLayout); ?>
+            <?= $tabManager->renderPanels($resource, $tabContent, $tabLayout); ?>
         <?php else: ?>
-            <?php echo $bottomMainBlockContent->getBlocks(); ?>
+            <?= $bottomMainBlockContent->getBlocks(); ?>
         <?php endif; ?>
     </div>
-    <?php endif; ?>
-    <?php $this->trigger('view.show.after'); ?>
+<?php endif; ?>    <?php $this->trigger('view.show.after'); ?>
 </div>
